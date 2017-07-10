@@ -31,4 +31,11 @@ class Test {
         
         return Yii::$app->db->createCommand($sql)->queryOne();
     }
+    
+    public static function getCountNews(){
+        
+        $sql = 'SELECT count(*) FROM news';
+        
+        return Yii::$app->db->createCommand($sql)->queryOne();
+    }
 }

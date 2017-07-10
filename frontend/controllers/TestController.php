@@ -8,8 +8,7 @@ use Yii;
 class TestController extends Controller
 {
 
-    public function actionIndex()
-    {
+    public function actionIndex(){
         $max = Yii::$app->params['maxNewsInList'];
         
         $list = Test::getNewsList($max);
@@ -18,8 +17,7 @@ class TestController extends Controller
         ]);
     }
     
-    public function actionView($id)
-    {
+    public function actionView($id){
         $item = Test::getNewsItem($id);
         
         return $this->render('view', [
@@ -37,6 +35,15 @@ class TestController extends Controller
                 ->send();      
         var_dump($result);
         die;
+    }
+    
+    public function actionCount() {
+    
+        $count = Test::getCountNews();
+        //$count = intval($count);
+        return $this->render('countnews', [
+            'count'=>$count,
+        ]);
     }
 
 }
