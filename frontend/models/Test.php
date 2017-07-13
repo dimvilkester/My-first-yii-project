@@ -31,11 +31,25 @@ class Test {
         
         return Yii::$app->db->createCommand($sql)->queryOne();
     }
+    /**
+     * 
+     * @return integer
+     */
     
     public static function getCountNews(){
+        //Вариант 1. Подсчет количества строк sql
+        //$sql = 'SELECT count(id) FROM news';
+        //return Yii::$app->db->createCommand($sql)->queryOne();
         
-        $sql = 'SELECT count(*) FROM news';
+        //Вариант 1. Подсчет количества строк php
+        $sql = 'SELECT * FROM news';
+        $arrRow = Yii::$app->db->createCommand($sql)->queryAll();
         
-        return Yii::$app->db->createCommand($sql)->queryOne();
+        if (!isset($arrRow) && !is_array($arrRow)){
+            echo "Ошибка";
+        } 
+        
+        $result = count($arrRow);
+        return $result;
     }
 }

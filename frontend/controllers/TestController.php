@@ -40,7 +40,7 @@ class TestController extends Controller
     public function actionCount() {
     
         $count = Test::getCountNews();
-        //$count = intval($count);
+
         return $this->render('countnews', [
             'count'=>$count,
         ]);

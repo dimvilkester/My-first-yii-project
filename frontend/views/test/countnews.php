@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">          
         <div class="col-lg-12">
-            <p>Общее количество новостей: <?php echo $count['count(*)'];?></p>
+            <p>Общее количество новостей: <?php echo $count;?></p>
             <p><a class="btn btn-info" href="<?php echo Yii::$app->urlManager->createUrl([''])?>">Вернуться на главную</a></p>
         </div>
     </div>
