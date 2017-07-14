@@ -49,18 +49,6 @@ return [
         'stringHelper' => [
             'class' => 'frontend\components\StringHelper',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => false,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.rambler.ru',
-                'username' => 'kiddr@rambler.ru',
-                'password' => '',
-                'port' => '465',
-                'encryption' => 'tls',
-            ],
-        ],
     ],
     'params' => $params,
 ];
