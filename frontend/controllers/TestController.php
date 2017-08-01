@@ -27,8 +27,8 @@ class TestController extends Controller
     
     public function actionMail() {
         $result = Yii::$app->mailer->compose()
-                ->setFrom('kiddr@rambler.ru')
-                ->setTo('kiddr@rambler.ru')
+                ->setFrom('kiddrtest@gmail.ru')
+                ->setTo('kiddrtest@gmail.ru')
                 ->setSubject('Hello World')
                 ->setTextBody('Текст сообщения')
                 ->setHtmlBody('<b>текст сообщения в формате HTML</b>')
@@ -45,5 +45,4 @@ class TestController extends Controller
             'count'=>$count,
         ]);
     }
-
 }
