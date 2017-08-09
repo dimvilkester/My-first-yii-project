@@ -26,6 +26,16 @@ return [
                 ],
             ],
         ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+                
+            ],
+        ],
+        'stringHelper' => [
+            'class' => 'common\components\StringHelper',
+        ],
     ],
     'params' => $params,
 ];
