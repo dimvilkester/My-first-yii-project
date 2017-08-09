@@ -3,8 +3,7 @@
 namespace console\controllers;
 
 use Yii;
-use console\models\News;
-use console\models\Subscriber;
+use console\models\Associate;
 use console\models\Sender;
 
 class MailerController extends \yii\console\Controller
@@ -15,6 +14,11 @@ class MailerController extends \yii\console\Controller
         
         return Sender::run($subscribersList, $newsList);
     }
+    
+    public function actionSendpay() {
+        $associateList = Associate::getList();
+        return Sender::running($associateList);
+    }    
     
     public function actionSendForExample() {
         $result = Yii::$app->mailer->compose()
