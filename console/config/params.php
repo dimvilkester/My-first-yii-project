@@ -1,6 +1,6 @@
 <?php
 return [
-    'adminEmail' => 'admin@example.com',
+    'adminEmail' => 'kiddrtest@gmail.com',
     'limitSymbol' => 20,
     'limitWords' => 10,
 ];

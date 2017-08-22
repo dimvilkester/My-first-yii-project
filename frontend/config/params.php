@@ -1,7 +1,5 @@
 <?php
 return [
-    'adminEmail' => 'admin@example.com',
+    'adminEmail' => 'kiddrtest@gmail.com',
     'maxNewsInList' => 2,
-    'limitSymbol' => 20,
-    'limitWords' => 10,
 ];

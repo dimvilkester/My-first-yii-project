@@ -61,4 +61,22 @@ class Sender
         }
     }
     
+    public static function runwin($windowList){
+        
+        $data = Yii::$app->formatter->asDate('now', 'php:d.m.Y') ."\n";
+        
+        foreach ($windowList as $window) {
+            $result = Yii::$app->mailer->compose('/window/orderwindow', [
+                'window' => $window,
+                'data' => $data,
+                
+            ])
+                ->setFrom(Yii::$app->params['adminEmail'])
+                ->setTo(Yii::$app->params['adminEmail'])
+                ->setSubject('Заказ окна')
+                ->send();         
+        }
+
+    }
+    
 }

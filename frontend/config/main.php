@@ -13,7 +13,8 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-frontend',
+            'csrfParam' => '_csrf-frontend', 
+            'enableCsrfValidation' => false,
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -45,9 +46,6 @@ return [
                 'news/<id:\d+>' => 'test/view',
                 'news-count' => 'test/count',
             ],
-        ],
-        'stringHelper' => [
-            'class' => 'common\components\StringHelper',
         ],
     ],
     'params' => $params,
