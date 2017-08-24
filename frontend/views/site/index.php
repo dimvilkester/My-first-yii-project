@@ -48,5 +48,17 @@ $this->title = 'My first Yii Application';
                 <p><a class="btn btn-default" href="<?php echo Url::to(['window/order'])?>">To order Window</a></p>
             </div>
         </div>
+        
+        <div class="row">
+                <div class="col-lg-4">
+                <h2>Gallary</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </p>
+
+                <p><a class="btn btn-danger" href="<?php echo Url::to(['gallary/index'])?>">Enjoy Gallary!</a></p>
+            </div>
+        </div>
     </div>
 </div>

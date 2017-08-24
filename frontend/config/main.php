@@ -1,9 +1,7 @@
 <?php
+
 $params = array_merge(
-    require(__DIR__ . '/../../common/config/params.php'),
-    require(__DIR__ . '/../../common/config/params-local.php'),
-    require(__DIR__ . '/params.php'),
-    require(__DIR__ . '/params-local.php')
+        require(__DIR__ . '/../../common/config/params.php'), require(__DIR__ . '/../../common/config/params-local.php'), require(__DIR__ . '/params.php'), require(__DIR__ . '/params-local.php')
 );
 
 return [
@@ -13,7 +11,7 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-frontend', 
+            'csrfParam' => '_csrf-frontend',
             'enableCsrfValidation' => false,
         ],
         'user' => [
@@ -28,7 +26,7 @@ return [
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
-                [
+                    [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
@@ -47,6 +45,19 @@ return [
                 'news-count' => 'test/count',
             ],
         ],
+//        'assetManager' => [
+//            'bundles' => [
+//                'yii\web\JqueryAsset' => [
+//                    'js' => []
+//                ],
+//                'yii\web\YiiAsset' => [
+//                    'js' => []
+//                ],
+//                'yii\bootstrap\BootstrapPluginAsset' => [
+//                    'js' => []
+//                ],
+//            ],
+//        ],
     ],
     'params' => $params,
     'aliases' => [
