@@ -50,7 +50,7 @@ $this->title = 'My first Yii Application';
         </div>
         
         <div class="row">
-                <div class="col-lg-4">
+            <div class="col-lg-4">
                 <h2>Gallary</h2>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -58,6 +58,16 @@ $this->title = 'My first Yii Application';
                 </p>
 
                 <p><a class="btn btn-danger" href="<?php echo Url::to(['gallary/index'])?>">Enjoy Gallary!</a></p>
+            </div>
+            
+            <div class="col-lg-4">
+                <h2>View Nivo Slider jQuery Plugin</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </p>
+
+                <p><a class="btn btn-info" href="<?php echo Url::to(['slider/index'])?>">View Nivo Slider</a></p>
             </div>
         </div>
     </div>
