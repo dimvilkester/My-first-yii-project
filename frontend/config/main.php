@@ -45,19 +45,22 @@ return [
                 'news-count' => 'test/count',
             ],
         ],
-//        'assetManager' => [
-//            'bundles' => [
-//                'yii\web\JqueryAsset' => [
-//                    'js' => []
-//                ],
-//                'yii\web\YiiAsset' => [
-//                    'js' => []
-//                ],
-//                'yii\bootstrap\BootstrapPluginAsset' => [
-//                    'js' => []
-//                ],
+        'assetManager' => [
+//            'assetMap' => [
+//                'jquery.js' => '//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js',
 //            ],
-//        ],
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => [
+                        'js/jquery.js',
+                        'js/jquery-1.8.1.js',
+                    ]
+                ],
+            ],
+        ],
     ],
     'params' => $params,
     'aliases' => [

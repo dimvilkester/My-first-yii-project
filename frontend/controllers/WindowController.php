@@ -19,8 +19,8 @@ class WindowController extends Controller
             $model->attributes = $formData;
             
             if ($model->validate() && $model->save()) { 
-                
-                $model->run($formData);
+                               
+                $model->run($model['attributes']);
                 
                 Yii::$app->session->setFlash('info', 'To order window completed!');
             }      

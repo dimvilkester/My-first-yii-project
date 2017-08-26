@@ -12,7 +12,7 @@ class SliderAsset extends AssetBundle
     ];
     
     public $js = [
-        'js/jquery.min.1.8.1.js',
+        //'js/jquery.1.8.1.js',
         'js/slider/jquery.nivo.slider.pack.js',        
     ];
     
