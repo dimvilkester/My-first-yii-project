@@ -56,10 +56,8 @@ class EmployeeController extends Controller {
         $model->scenario = Employee::SCENARIO_EMPLOYEE_REGISTER;
 
         $formData = Yii::$app->request->post();
-
-        if (Yii::$app->request->isPost) {
-
-            $model->attributes = $formData;
+      
+        if ($model->load($formData)) {
 
             if ($model->validate() && $model->save()) {
                 Yii::$app->session->setFlash('info', 'Register completed!');

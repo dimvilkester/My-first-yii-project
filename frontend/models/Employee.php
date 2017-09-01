@@ -4,6 +4,7 @@ namespace frontend\models;
 
 use yii\base\Model;
 use Yii;
+use yii\helpers\ArrayHelper;
 
 class Employee extends Model {
 
@@ -63,5 +64,14 @@ class Employee extends Model {
         $result = Yii::$app->db->createCommand($sql)->queryAll();
 
         return $result;
+    }
+    
+    public function getCityList(){
+        
+        $sql = "SELECT * FROM city;";
+        
+        $result = Yii::$app->db->createCommand($sql)->queryAll();
+        
+        return ArrayHelper::map($result, 'id', 'name');
     }
 }

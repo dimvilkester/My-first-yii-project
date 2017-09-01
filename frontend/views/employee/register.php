@@ -1,95 +1,56 @@
 <?php
-
 /* @var $model frontend\models\Employee */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\ActiveForm;
 
 $this->title = 'Register employee';
 $this->params['breadcrumbs'][] = $this->title;
 
 if (Yii::$app->session->hasFlash('employeeStatus')) {
-   echo Yii::$app->session->getFlash('employeeStatus');
+    echo Yii::$app->session->getFlash('employeeStatus');
 }
 
-if ($model->hasErrors()) {
-    echo '<pre>';
-    print_r($model->getErrors());
-    echo '</pre>';
-}
 ?>
 
 <div class="body-content">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="col-lg-12">
+        <h1><?= Html::encode($this->title) ?></h1>
 
-    <div class="row">          
-        <form method="post" class="form-horizontal">
-            <div class="form-group">
-                
-                <div class="col-lg-12">
-                    <h3>First name:</h3>
-                    <input type="text" name="firstName" class="form-control" placeholder="First name">
-                </div>
-                                
-                <div class="col-lg-12">
-                    <h3>Last name:</h3>
-                    <input type="text" name="lastName" class="form-control" placeholder="Last name">
-                </div>
-                
-                <div class="col-lg-12">
-                    <h3>Middle name:</h3>
-                    <input type="text" name="middleName" class="form-control" placeholder="Middle name">
-                </div>
-                
-                <div class="col-lg-12">
-                    <h3>Birthday:</h3>
-                    <input type="text" name="birthday" class="form-control" placeholder="Birthday">
-                </div> 
-                
-                <div class="col-lg-12">
-                    <h3>City:</h3>
-                    <select required name="city" class="form-control">
-                        <option disabled selected>Выберите из списка</option>
-                        <option value="1">Москва</option>
-                        <option value="2">Санкт-Петербург</option>
-                        <option value="3">Новосибирск</option>
-                        <option value="4">Казань</option><
-                        <option value="5">Калининград</option>
-                    </select>
-                </div>
-                
-                <div class="col-lg-12">
-                    <h3>Start date of work:</h3>
-                    <input type="text" name="startDateWork" class="form-control" placeholder="Start date of work">
-                </div>                
-                
-                <div class="col-lg-12">
-                    <h3>Position:</h3>
-                    <input type="text" name="position" class="form-control" placeholder="Position">
-                </div>
- 
-                 <div class="col-lg-12">
-                    <h3>Id code:</h3>
-                    <input type="text" name="idCode" class="form-control" placeholder="Id code">
-                </div>               
-                
-                <div class="col-lg-12">
-                    <h3>Email:</h3>
-                    <input type="text" name="email" class="form-control" placeholder="Email">
-                </div>          
-               
-                <div class="col-lg-12"><br></div>
-                
-                <div class="col-lg-12">
-                    <input type="submit" value="Submit" class="btn btn-default">
-                    <input type="reset" value="Reset" class="btn btn-danger">
-                </div>
-                
-                <div class="col-lg-12">
-                    <hr>
-                    <a class="btn btn-info" href="<?php echo Url::home() ?>">Вернуться на главную</a>
-                </div>
-            </div>
-        </form>
+        <?php
+        $form = ActiveForm::begin([
+            'id' => 'login-form',
+            'options' => ['class' => 'form-horizontal'],
+        ]);
+        ?>
+
+        <?php echo $form->field($model, 'firstName')->textInput()->hint('Пожалуйста, введите имя')->label('Имя'); ?>
+
+        <?php echo $form->field($model, 'lastName')->textInput()->hint('Пожалуйста, введите фамилию')->label('Фамилия'); ?>
+
+        <?php echo $form->field($model, 'middleName')->textInput()->hint('Пожалуйста, введите отчество')->label('Отчество'); ?>
+
+        <?php echo $form->field($model, 'birthday')->textInput()->hint('Пожалуйста, введите дату рождения в формате yyyy-mm-dd')->label('Дата рождения'); ?>
+
+        <?php echo $form->field($model, 'city')->textInput()->hint('Пожалуйста, выберите город проживания')->label('Город проживания')->dropDownList($model->getCityList()); ?>
+
+        <?php echo $form->field($model, 'startDateWork')->textInput()->hint('Пожалуйста, введите дату начала работы в формате yyyy-mm-dd')->label('Дата начала работы'); ?>
+
+        <?php echo $form->field($model, 'position')->textInput()->hint('Пожалуйста, укажите вашу должность')->label('Занимаемая должность'); ?>
+
+        <?php echo $form->field($model, 'idCode')->textInput()->hint('Пожалуйста, укажите идентификационный код (10 символов)')->label('Идентификационный код'); ?>
+
+        <?php echo $form->field($model, 'email')->textInput()->hint('Пожалуйста, укажите Ваш email адресс')->label('Email адресс'); ?>
+
+        <?php echo Html::submitButton('Send', ['class' => 'btn btn-primary']); ?>
+        <?php echo Html::resetButton('Reset', ['class' => 'btn btn-danger']); ?>
+
+        <?php ActiveForm::end(); ?>
     </div>
-</div>
+
+    <div class="col-lg-12">
+        <hr>
+        <?php echo Html::a('Вернуться на главную', Url::home(), ['class' => 'btn btn-info']); ?>
+    </div>   
+</div>   
