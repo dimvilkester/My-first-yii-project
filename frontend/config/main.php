@@ -5,6 +5,7 @@ $params = array_merge(
 );
 
 return [
+    'language' => 'ru-RU',
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -66,5 +67,6 @@ return [
     'aliases' => [
         '@files' => '/var/www/project/frontend/web/files',
         '@photos' => '@files/photos',
+        '@gallary' => '/files/gallary',
     ],
 ];
