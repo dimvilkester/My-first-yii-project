@@ -104,6 +104,46 @@ $this->title = 'My first Yii Application';
             </div>
         </div>
         
+        <div class="jumbotron">
+            <h1>Store</h1>
+
+            <p class="lead">Main index Store.</p>
+
+            <p><a class="btn btn-lg btn-info" href="<?php echo Url::to(['store/index']) ?>">View Store</a></p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Add new Category</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </p>
+
+                <p><a class="btn btn-success" href="<?php echo Url::to(['category/create']) ?>">Add new Category</a></p>
+            </div>
+            
+            <div class="col-lg-4">
+                <h2>Add new Product</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </p>
+
+                <p><a class="btn btn-success" href="<?php echo Url::to(['product/create']) ?>">Add new Product</a></p>
+            </div>
+            
+            <div class="col-lg-4">
+                <h2>Add new Manufacturer</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </p>
+
+                <p><a class="btn btn-success" href="<?php echo Url::to(['manufacturer/create']) ?>">Add new Manufacturer</a></p>
+            </div>
+        </div>        
+        
         <hr>
                 
         <div class="row">
