@@ -32,7 +32,7 @@ class BookshopController extends Controller
     public function actionCreate(){
         $model = new Book();
        
-        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('info', 'add book success!');
 
             return $this->refresh();

@@ -48,6 +48,15 @@ $this->title = 'My first Yii Application';
                 <p><a class="btn btn-default" href="<?php echo Url::to(['employee/index']) ?>">View list employee</a></p>
             </div>
         </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>View list employee</h1>
+                
+                <?php echo EmployeeList::widget(['max' => 4]);?>
+            </div> 
+        </div>
+        
 
         <div class="row">
             <div class="col-lg-4">
@@ -83,7 +92,13 @@ $this->title = 'My first Yii Application';
         </div>
 
         <div class="row">
-            <div class="col-lg-4">
+            <div class="jumbotron">
+                <h1>Bookshop!</h1>
+
+                <p class="lead">View Bookshop.</p>
+            </div>
+            
+            <div class="col-lg-6">
                 <h2>Bookshop</h2>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -93,7 +108,7 @@ $this->title = 'My first Yii Application';
                 <p><a class="btn btn-success" href="<?php echo Url::to(['bookshop/index']) ?>">View bookshop</a></p>
             </div>
             
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <h2>Add new book</h2>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -101,6 +116,28 @@ $this->title = 'My first Yii Application';
                 </p>
 
                 <p><a class="btn btn-primary" href="<?php echo Url::to(['bookshop/create']) ?>">Add book</a></p>
+            </div>
+        </div>
+        
+        <div class="row">           
+            <div class="col-lg-6">
+                <h2>View list author</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </p>
+                
+                <p><a class="btn btn-info" href="<?php echo Url::to(['author/index']) ?>">List author</a></p>
+            </div>
+            
+            <div class="col-lg-6">
+                <h2>Create new author</h2>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </p>
+
+                <p><a class="btn btn-success" href="<?php echo Url::to(['author/create']) ?>">Create author</a></p>
             </div>
         </div>
         
@@ -143,15 +180,5 @@ $this->title = 'My first Yii Application';
                 <p><a class="btn btn-success" href="<?php echo Url::to(['manufacturer/create']) ?>">Add new Manufacturer</a></p>
             </div>
         </div>        
-        
-        <hr>
-                
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>View list employee</h1>
-                
-                <?php echo EmployeeList::widget(['max' => 4]);?>
-            </div> 
-        </div>
     </div>
 </div>
