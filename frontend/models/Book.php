@@ -51,6 +51,20 @@ class Book extends ActiveRecord {
     }
     
     /**
+     * @return array parametrs
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'name' => 'Название',
+            'isbn' => 'ISBN',
+            'date_published' => 'Дата публикации',
+            'publisher_id' => 'Издательство',
+        ];
+    }
+    
+    /**
      * @return Publisher|NULL
      * 
      * Вызывая метод getPublisher у экземпляра Book мы получяем связь с Publisher (Издателем)
